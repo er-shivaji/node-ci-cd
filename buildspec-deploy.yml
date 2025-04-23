@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      kubectl: 1.27
+  build:
+    commands:
+      - echo Deploying to EKS...
+      - aws eks update-kubeconfig --region ap-south-1 --name my-cluster
+      - kubectl apply -f k8s/deployment.yaml
+      - kubectl apply -f k8s/service.yaml
