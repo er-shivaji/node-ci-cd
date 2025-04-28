@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-node-app
+  name: my-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-node-app
+      app: my-app
   template:
     metadata:
       labels:
-        app: my-node-app
+        app: my-app
     spec:
       containers:
-        - name: my-node-app
-          image: 332352763544.dkr.ecr.ap-south-1.amazonaws.com/my-node-app:latest
+        - name: my-app
+          image: my-app
           ports:
             - containerPort: 3000
