@@ -7,6 +7,6 @@ phases:
   build:
     commands:
       - echo Deploying to EKS...
-      - aws eks update-kubeconfig --region ap-south-1 --name my-cluster
+      - aws eks update-kubeconfig --region ap-south-1 --name my-node-cluster
       - kubectl apply -f k8s/deployment.yaml
       - kubectl apply -f k8s/service.yaml
